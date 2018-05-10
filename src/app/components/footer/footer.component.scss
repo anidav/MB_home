@@ -8,9 +8,9 @@
     background-color: $footer-color;
     @include section();
     color: $white;
-    padding: $small;
-    
+    padding: $small;    
 }
+
 .info {
     display: flex;
     & div {
@@ -20,6 +20,7 @@
         }    
     }     
 }
+
 p {
     padding: 0;
     margin: 0;
@@ -40,6 +41,11 @@ p {
     margin: $small/2 $small/2 $small/2 0;
 }
 
+.icons {
+    display: flex;
+}
+
 .icon {
-    @include imagesize($small, $small);
+    @include imagesize(30px, 30px);
+    margin: 5px;
 }

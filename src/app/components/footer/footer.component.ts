@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   public iconItems: Array<any> = [
-    '../assets/photos/fb-1.jpg',
-    '../assets/photos/twitter-icons-1.jpg'
+    '../assets/photos/facebook.png',
+    '../assets/photos/twitter.png',
+    '../assets/photos/linkedin.png',
+    '../assets/photos/googleplus.png'
   ]
   
   constructor() { }
