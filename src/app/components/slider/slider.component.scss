@@ -1,27 +1,30 @@
+@import '~assets/styles/base/variables';
+@import '~assets/styles/base/mixins';
+@import '~assets/styles/base/typography';
+
 .myCarousel {
-    width: 60%;
-    height: 300px;
-    background-color: white;
+    @include imagesize(60%, 300px);
+    background-color: $white;
     text-align: center;
     margin-left: 20%;
-    margin-top: 50px;
+    margin-top: $standard;
 }
 
 .icon {
-    background-color: gray;
+    background-color: $gray;
 }
 
 .company {
-    color: gray;
+    color: $gray;
 }
 
 .lorem {
     font-size: 11px;
-    padding: 20px;
+    padding: $small;
     width: 60%;
-    color: #99dae4;
+    color: $lorem-color;
     margin-left: 20%;
 }
 .item {
-    padding-top: 50px;
+    padding-top: $standard;
 }

@@ -1,16 +1,19 @@
+@import '~assets/styles/base/variables';
+@import '~assets/styles/base/mixins';
+@import '~assets/styles/base/typography';
+
 .planning {
-    background-color: #f3f3f3;
+    background-color: $planning-back;
     text-align: center;
-    width: 90%;
-    margin-left: 5%;
+    @include section();
     & h5 {
-        color: #696565;
+        color: $h-color;
         margin-bottom: 0;
-        padding-top: 30px;
-        font-weight: 700;
+        padding-top: $large/2;
+        font-weight: 500;
     }    
     & p {
-        color: gray;
+        color: $gray;
     }
 }
 
@@ -20,53 +23,50 @@ p {
 }
 
 .price {
-    margin-bottom: 0;
-    color: #17a2b8;
-    margin-top: 30px;
+    @include margin-top-bottom($large/2, 0);  
+    color: $button-color;
 }
 
 .monthly {
-    color: #17a2b8 !important;
+    color: $button-color !important;
 }
 
 .name {
-    color: #1a4477;
+    color: $description-color;
 }
 
 .description {
-    margin-top: 40px;
+    margin-top: $middle;
     & p {
-        color: #1a4477;
+        color: $description-color;
     }
 }
 
 .plans {
-    border: 2px solid gray;
-    padding: 20px;
-    margin-top: 40px;
-    padding-bottom: 50px;
+    border: 2px solid $gray;
+    padding: $small;
+    margin-top: $middle;
+    padding-bottom: $standard;
 } 
 
 .btn-border {
-    margin-top: 50px;
-    border: 1.5px solid #17a2b8;
-    border-radius: 20px;
-    padding-left: 30px;
-    padding-right: 30px; 
+    margin-top: $standard;
+    @include button();
+    @include padding-left-right($large/2, $large/2);
 }
 
 .plan {
     padding: 0;
-    margin-top: 50px;
+    margin-top: $standard;
 }
 
 .plan:hover {
     .plans{
         border: none;
     } 
-    border: 2px solid #1a4477;
+    border: 2px solid $description-color;
     flex-grow: 0.9;
     .description {
-        margin-top: 80px;
+        margin-top: $middle*2;
     }    
 }

@@ -6,7 +6,6 @@ import { LogosComponent } from './components/logos/logos.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MainComponent } from './components/main/main.component';
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import { MainComponent } from './components/main/main.component';
     SliderComponent,
     PlanningComponent,
     FooterComponent,
-    MainComponent
   ],
   imports: [
     BrowserModule

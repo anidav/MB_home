@@ -1,18 +1,20 @@
+@import '~assets/styles/base/variables';
+@import '~assets/styles/base/mixins';
+@import '~assets/styles/base/typography';
+
 .navigation {
     display: flex;
     justify-content: space-between;
     width: 82%;    
-    margin-left: 70px;
-    padding-top: 20px;
+    margin-left: 9%;
+    padding-top: $small;
     & h3 {
-        color: white;
+        color: $white;
     }
 }
 
 .btn-border {
-    border: 1.5px solid #17a2b8;
-    border-radius: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: 20px;
+    @include button();
+    @include padding-left-right($small, $small);
+    margin-left: $small;
 }

@@ -1,11 +1,11 @@
+@import '~assets/styles/base/variables';
+@import '~assets/styles/base/config';
+@import '~assets/styles/base/mixins';
+
 .main {
-    background-image: url("../assets/photos/pexels-photo-187041.jpg");
-    height: 480px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 90%;
-    margin-left: 5%;
+    @include background($main-background);
+    height: 480px;    
+    @include section();
 }
 
 .text {
@@ -14,40 +14,32 @@
     align-items: center;
     margin-top: 130px;
     & h3 {
-        color: white;
+        color: $white;
         margin-bottom: 0;
     }
     & p {
         font-size: 23px;
-        color: #dcd7d7;       
+        color: $paragraph;       
     }
     & button {
         margin-top: 60px;
-        border: 1.5px solid #17a2b8;
-        border-radius: 20px;
-        padding-left: 30px;
-        padding-right: 30px; 
+        @include button();
+        @include padding-left-right(30px, 30px);
     }
 }
 
 .startUp {
     display: flex;
-    width: 90%;
-    margin-left: 5%;
-    background-color: #d0d3d6;
+    @include section();
+    background-color: $startup-back;
 }
 
 .picture {
-    background-image: url('../assets/photos/startup-photos.jpg');   
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;     
+    @include background($startup-background);         
     width: 50%;
-    background-repeat: no-repeat;
     & h3 {
-        margin-top: 20px;
-        margin-left: 70px;
-        color: white;
+        @include margin-top-left(20px, 70px);
+        color: $white;
     }
 }
 
@@ -57,27 +49,25 @@
     & h6 {
         padding-bottom: 40px;
         font-weight: 700;
-        color: #696565;
+        color: $h-color;
     }
     & p {
         font-size: 15px;
-        color: gray;
+        color: $gray;
         margin-bottom: 0;
     }
     & button {
         margin-top: 30px;
-        border: 1.5px solid #17a2b8;
-        border-radius: 20px;
+        @include button();
     }
 }
 
 .trial {
     display: flex;
-    width: 90%;
-    margin-left: 5%;
+    @include section();
     margin-top: 100px;
     text-align: center;
-    background-color: #f7f9fb;
+    background-color: $trial-back;
     &-start {
         display: flex;
         align-items: center;
@@ -87,25 +77,24 @@
             width: 80%;
             & h4 {
                 font-weight: 700;
-                color: #696565;
+                color: $h-color;
                 padding-bottom: 30px;
             }
             & p {
                 font-size: 15px;
                 font-weight: 500;
-                color: gray;
+                color: $gray;
             }
         }       
         & button {
-            border: 1.5px solid #17a2b8;
-            border-radius: 20px;
+            @include button();
             width: 70%;
             margin: 10px;           
         } 
         & .sign-up {
             border-radius: 0;
-            background-color: #17a2b8;
-            color: white;
+            background-color: $button-color;
+            color: $white;
         }           
     } 
     &-image {
