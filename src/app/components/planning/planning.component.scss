@@ -63,7 +63,7 @@ p {
 .plan {
     padding: 0;
     margin-top: $standard;
-    transition: all 1s ease-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .plan:hover {
