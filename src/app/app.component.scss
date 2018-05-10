@@ -1,0 +1,114 @@
+.main {
+    background-image: url("../assets/photos/pexels-photo-187041.jpg");
+    height: 480px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 130px;
+    & h3 {
+        color: white;
+        margin-bottom: 0;
+    }
+    & p {
+        font-size: 23px;
+        color: #dcd7d7;       
+    }
+    & button {
+        margin-top: 60px;
+        border: 1.5px solid #17a2b8;
+        border-radius: 20px;
+        padding-left: 30px;
+        padding-right: 30px; 
+    }
+}
+
+.startUp {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    background-color: #d0d3d6;
+}
+
+.picture {
+    background-image: url('../assets/photos/startup-photos.jpg');   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;     
+    width: 50%;
+    background-repeat: no-repeat;
+    & h3 {
+        margin-top: 20px;
+        margin-left: 70px;
+        color: white;
+    }
+}
+
+.loremipsum {
+    width: 50%;
+    padding: 40px;
+    & h6 {
+        padding-bottom: 40px;
+        font-weight: 700;
+        color: #696565;
+    }
+    & p {
+        font-size: 15px;
+        color: gray;
+        margin-bottom: 0;
+    }
+    & button {
+        margin-top: 30px;
+        border: 1.5px solid #17a2b8;
+        border-radius: 20px;
+    }
+}
+
+.trial {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 100px;
+    text-align: center;
+    background-color: #f7f9fb;
+    &-start {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%; 
+        & div {
+            width: 80%;
+            & h4 {
+                font-weight: 700;
+                color: #696565;
+                padding-bottom: 30px;
+            }
+            & p {
+                font-size: 15px;
+                font-weight: 500;
+                color: gray;
+            }
+        }       
+        & button {
+            border: 1.5px solid #17a2b8;
+            border-radius: 20px;
+            width: 70%;
+            margin: 10px;           
+        } 
+        & .sign-up {
+            border-radius: 0;
+            background-color: #17a2b8;
+            color: white;
+        }           
+    } 
+    &-image {
+        width: 50%;
+    }
+}

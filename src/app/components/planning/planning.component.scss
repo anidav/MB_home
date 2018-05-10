@@ -1,0 +1,72 @@
+.planning {
+    background-color: #f3f3f3;
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    & h5 {
+        color: #696565;
+        margin-bottom: 0;
+        padding-top: 30px;
+        font-weight: 700;
+    }    
+    & p {
+        color: gray;
+    }
+}
+
+p {
+    font-size: 10px;
+    margin: 0;
+}
+
+.price {
+    margin-bottom: 0;
+    color: #17a2b8;
+    margin-top: 30px;
+}
+
+.monthly {
+    color: #17a2b8 !important;
+}
+
+.name {
+    color: #1a4477;
+}
+
+.description {
+    margin-top: 40px;
+    & p {
+        color: #1a4477;
+    }
+}
+
+.plans {
+    border: 2px solid gray;
+    padding: 20px;
+    margin-top: 40px;
+    padding-bottom: 50px;
+} 
+
+.btn-border {
+    margin-top: 50px;
+    border: 1.5px solid #17a2b8;
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px; 
+}
+
+.plan {
+    padding: 0;
+    margin-top: 50px;
+}
+
+.plan:hover {
+    .plans{
+        border: none;
+    } 
+    border: 2px solid #1a4477;
+    flex-grow: 0.9;
+    .description {
+        margin-top: 80px;
+    }    
+}

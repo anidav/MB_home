@@ -1,0 +1,21 @@
+<div class="planning">
+  <h5>Choose your perfect plan</h5>
+  <p>Some description or offer about your pricing plans and rates.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm plan" *ngFor="let item of planItems">
+        <div class="plans">
+          <h6 class="name">{{item.name}}</h6>
+          <h6 class="price">{{item.price}}</h6>
+          <p class="monthly">monthly</p>
+          <div class="description">
+            <p>50GB Disc Space</p>
+            <p>500GB Monthly</p>
+            <p>200 Email Accounts</p>
+          </div>
+          <button type="button" class="btn btn-outline-info btn-border">PRESS ME</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
