@@ -48,4 +48,5 @@ p {
 .icon {
     @include imagesize(30px, 30px);
     margin: 5px;
+    cursor: pointer;
 }
