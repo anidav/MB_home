@@ -1,6 +1,7 @@
 @import '~assets/styles/base/variables';
 @import '~assets/styles/base/config';
 @import '~assets/styles/base/mixins';
+@import '~assets/styles/base/typography';
 
 .main {
     @include background($main-background);
@@ -22,9 +23,9 @@
         color: $paragraph;       
     }
     & button {
-        margin-top: 60px;
+        margin-top: $large;
         @include button();
-        @include padding-left-right(30px, 30px);
+        @include padding-left-right($large/2, $large/2);
     }
 }
 
@@ -38,26 +39,26 @@
     @include background($startup-background);         
     width: 50%;
     & h3 {
-        @include margin-top-left(20px, 70px);
+        @include margin-top-left($small, 70px);
         color: $white;
     }
 }
 
 .loremipsum {
     width: 50%;
-    padding: 40px;
+    padding: $middle;
     & h6 {
-        padding-bottom: 40px;
+        padding-bottom: $middle;
         font-weight: 700;
         color: $h-color;
     }
     & p {
-        font-size: 15px;
+        font-size: $large/4;
         color: $gray;
         margin-bottom: 0;
     }
     & button {
-        margin-top: 30px;
+        margin-top: $large/2;
         @include button();
     }
 }
@@ -65,7 +66,7 @@
 .trial {
     display: flex;
     @include section();
-    margin-top: 100px;
+    margin-top: $standard*2;
     text-align: center;
     background-color: $trial-back;
     &-start {
@@ -78,10 +79,10 @@
             & h4 {
                 font-weight: 700;
                 color: $h-color;
-                padding-bottom: 30px;
+                padding-bottom: $large/2;
             }
             & p {
-                font-size: 15px;
+                font-size: $large/4;
                 font-weight: 500;
                 color: $gray;
             }
@@ -89,7 +90,7 @@
         & button {
             @include button();
             width: 70%;
-            margin: 10px;           
+            margin: $small/2;           
         } 
         & .sign-up {
             border-radius: 0;
@@ -98,6 +99,6 @@
         }           
     } 
     &-image {
-        width: 50%;
+        width: 50%;       
     }
 }
