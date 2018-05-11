@@ -2,51 +2,50 @@
 @import '~assets/styles/base/mixins';
 @import '~assets/styles/base/typography';
 
-.footer {    
-    display: flex;
-    justify-content: space-around;
-    background-color: $footer-color;
-    @include section();
-    color: $white;
-    padding: $small;    
-}
-
-.info {
-    display: flex;
-    & div {
-        padding: $small/2;   
-        & p {
-            cursor: pointer;
-        }    
-    }     
-}
-
-p {
+%font-shared {
+    font-size: $small/1.5;
+    cursor: pointer;
     padding: 0;
     margin: 0;
-    font-size: $small/2;    
 }
 
-.newsletter, .follow-us {
-    padding: $small;
-}
-
-.news {
-    font-size: $large/5;
-    font-weight: 700;
-}
-
-.email {
-    border-radius: $small;
-    margin: $small/2 $small/2 $small/2 0;
-}
-
-.icons {
+.footer {    
+    @include section();
     display: flex;
-}
-
-.icon {
-    @include imagesize(30px, 30px);
-    margin: 5px;
-    cursor: pointer;
+    justify-content: space-around;
+    background-color: $footer-color;    
+    color: $white;
+    padding: $small;
+    .info {
+        display: flex;
+        .links {
+            padding-right: $small/2;   
+            & a {
+                @extend %font-shared;
+            }    
+        }     
+    }   
+    .part {
+        margin-top: $middle;
+    } 
+    .news {
+        font-size: $large/5;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+    .email {
+        border-radius: $small;
+        margin: $small/2 $small/2 $small/2 0;
+    }
+    .subscribe, .social {
+        @extend %font-shared;
+    }
+    .icons-div {
+        display: flex;
+        .icon {
+            @include imagesize(30px, 30px);
+            margin: 5px;
+            cursor: pointer;
+        }
+    }
 }

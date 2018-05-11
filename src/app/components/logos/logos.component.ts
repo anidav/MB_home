@@ -28,5 +28,4 @@ export class LogosComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

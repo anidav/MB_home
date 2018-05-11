@@ -3,115 +3,114 @@
 @import '~assets/styles/base/mixins';
 @import '~assets/styles/base/typography';
 
-.main {
-    @include background($main-background);
-    height: 480px;    
-    @include section();
-}
-
 %image-style {
     width: 100%;
     height: 100%;
 }
 
-.text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 130px;
-    & h3 {
-        color: $white;
-        margin-bottom: 0;
-    }
-    & p {
-        font-size: 23px;
-        color: $paragraph;       
-    }
-    & button {
-        margin-top: $large;
-        @include button();
-        @include padding-left-right($large/2, $large/2);
-    }
+.main {
+    @include background($main-background);
+    @include section();
+    height: 480px;  
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 130px;
+        .title {
+            color: $white;
+            margin-bottom: 0;
+        }
+        .description {
+            font-size: 23px;
+            color: $paragraph;       
+        }
+        .get-started {
+            margin-top: $large;
+            @include button();
+            @include padding-left-right($large/2, $large/2);
+        }
+    }   
 }
 
 .startUp {
-    display: flex;
     @include section();
+    display: flex;    
     background-color: $startup-back;
-}
-
-.picture {
-    display: flex;        
-    width: 50%;
-    & h3 {
-        position: absolute;
+    .picture-div {       
+        display: flex;        
+        width: 50%;        
+        .picture {
+            @extend %image-style;
+        }    
+    }
+    &-logo {        
         @include margin-top-left($small, 70px);
+        position: absolute;        
         color: $white;
-        z-index: 1;
+        z-index: 1;        
     }
-    & img {
-       @extend %image-style;
-    }
-}
-
-.loremipsum {
-    width: 50%;
-    padding: $middle;
-    & h6 {
-        padding-bottom: $middle;
-        font-weight: 700;
-        color: $h-color;
-    }
-    & p {
-        font-size: $large/4;
-        color: $gray;
-        margin-bottom: 0;
-    }
-    & button {
-        margin-top: $large/2;
-        @include button();
-    }
+    .text {
+        width: 50%;
+        padding: $middle;
+        .title {
+            padding-bottom: $middle;
+            font-weight: 700;
+            color: $heading-color;
+        }
+        .description {
+            font-size: $large/4;
+            color: $gray;
+            margin-bottom: 0;
+        }
+        .press-button {
+            margin-top: $large/2;
+            @include button();
+            @include padding-left-right($large/2, $large/2);
+        }
+    }    
 }
 
 .trial {
-    display: flex;
     @include section();
+    display: flex;    
     margin-top: $standard*2;
     text-align: center;
     background-color: $trial-back;
-    &-start {
+    .start {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 50%; 
-        & div {
+        .left {
             width: 60%;
-            & h4 {
+            .title {
                 font-weight: 700;
-                color: $h-color;
+                color: $heading-color;
                 padding-bottom: $large/2;
             }
-            & p {
+            .description {
                 font-size: $large/4;
                 font-weight: 500;
                 color: $gray;
             }
-        }       
-        & button {
-            @include button();
-            width: 70%;
-            margin: $small/2;           
-        } 
-        & .sign-up {
-            border-radius: 0;
-            background-color: $button-color;
-            color: $white;
-        }           
+            .pressme-button {
+                @include button();
+                width: 70%;
+                margin: $small/2;           
+            } 
+            .sign-up-button {
+                width: 70%;
+                border-radius: 0;
+                background-color: $button-color;
+                color: $white;
+            }           
+        }               
     } 
-    &-image {
+    .picture-div {
         width: 50%; 
-    }
-    & img {
-        @extend %image-style;
-    }
+        .picture {
+            @extend %image-style;
+        }
+    }    
 }

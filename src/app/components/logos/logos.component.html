@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="row">
+  <div class="row logo-items">
     <div class="col-sm" *ngFor="let item of logoItems">
       <div class="logos">
-        <img src="../../../assets/photos/{{item.icon}}">
-        <h6>{{item.name}}</h6>
-        <p>{{item.text}}</p>
+        <img class="logo-image" src="/assets/photos/{{item.icon}}">
+        <h6 class="logo-name">{{item.name}}</h6>
+        <p class="logo-text">{{item.text}}</p>
       </div>
     </div>
   </div>

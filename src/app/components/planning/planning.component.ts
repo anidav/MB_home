@@ -24,5 +24,4 @@ export class PlanningComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
