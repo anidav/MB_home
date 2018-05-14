@@ -1,21 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Directive } from '@angular/core';
+import { ElementRef, Renderer } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
+
 export class FooterComponent implements OnInit {
-  public iconItems: Array<any> = [
-    '../assets/photos/facebook.png',
-    '../assets/photos/twitter.png',
-    '../assets/photos/linkedin.png',
-    '../assets/photos/googleplus.png'
-  ]
-  
-  constructor() { }
+  myform: FormGroup;
 
-  ngOnInit() {
+  onSubmit() {
+    if (this.myform.valid) {
+      console.log('valid email');      
+    }
   }
+  constructor() {
 
+  }
+      
+  ngOnInit() {
+    this.myform = new FormGroup({
+      email: new FormControl (null, [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")])
+    });
+  }
 }

@@ -5,16 +5,12 @@
 .navigation {
     display: flex;
     justify-content: space-between;
-    width: 82%;    
-    margin-left: 9%;
+    width: 80%;    
+    margin-left: 10%;
     padding-top: $small;
-    & h3 {
-        color: $white;
+    .btn-border {
+        @include button();
+        @include padding-left-right($small, $small);
+        margin-left: $small;
     }
-}
-
-.btn-border {
-    @include button();
-    @include padding-left-right($small, $small);
-    margin-left: $small;
 }

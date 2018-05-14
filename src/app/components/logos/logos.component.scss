@@ -2,23 +2,22 @@
 @import '~assets/styles/base/mixins';
 @import '~assets/styles/base/typography';
 
-.row {
+.logo-items {
     @include padding-left-right($standard, $standard);
     @include margin-top-bottom($standard*2, $standard*2);
-}
-
-.logos {
-    text-align: center;
-    margin-left: $large/2;
-    & h6 {
-        font-size: 14px;
-    }
-    & p {
-        color: $gray; 
-        font-size: 14px;      
-    }
-    & img {
-        @include imagesize(30%, 30%);
-        padding-bottom: $small/2;
+    .logos {
+        text-align: center;
+        margin-left: $large/2;
+        .logo-image {
+            @include imagesize(30%, 30%);
+            padding-bottom: $small/2;
+        }
+        .logo-name {
+            font-size: 14px;
+        }
+        .logo-text {
+            color: $gray; 
+            font-size: 14px;      
+        }       
     }
 }

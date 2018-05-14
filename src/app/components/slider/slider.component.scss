@@ -2,29 +2,30 @@
 @import '~assets/styles/base/mixins';
 @import '~assets/styles/base/typography';
 
-.myCarousel {
+.company {
     @include imagesize(60%, 300px);
     background-color: $white;
     text-align: center;
     margin-left: 20%;
     margin-top: $standard;
-}
-
-.icon {
-    background-color: $gray;
-}
-
-.company {
-    color: $gray;
-}
-
-.lorem {
-    font-size: 11px;
-    padding: $small;
-    width: 60%;
-    color: $lorem-color;
-    margin-left: 20%;
-}
-.item {
-    padding-top: $standard;
+    .item {
+        padding-top: $standard;
+    }
+    .title {
+        color: $gray;
+    }
+    .comment {
+        font-size: 11px;
+        padding: $small;
+        width: 60%;
+        color: $text-color;
+        margin-left: 20%;
+    }
+    
+    .icon {
+        @include imagesize(30px, 30px);
+        color: $gray;
+        font-size: $middle;
+        margin-top: 120px;       
+    }
 }

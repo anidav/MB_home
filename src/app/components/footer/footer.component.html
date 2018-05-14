@@ -1,33 +1,54 @@
 <div class="footer">
-  <div class="banner">
-    <h5>MB</h5>
+  <div>
+    <a href="/" class="logo">MB</a>
     <div class="info">
-      <div>
-        <p>Banner Maker</p>
-        <p>Landing page creator</p>
-        <p>Ad Campaigns</p>
+      <div class="links">
+        <a>Banner Maker</a> <br>
+        <a>Landing page creator</a> <br>
+        <a>Ad Campaigns</a>
       </div>
-      <div>
-        <p>Pricing</p>
-        <p>How it works</p>
-        <p>Blog</p>
+      <div class="links">
+        <a>Pricing</a> <br>
+        <a>How it works</a> <br>
+        <a>Blog</a>
       </div>
     </div>
   </div>
-  <div class="newsletter">
+  <div class="part">
     <p class="news">Newsletter</p>
-    <p>Subscribe below</p>
-    <div class="form-group">
-      <input type="email" class="form-control email" placeholder="your@email.com">
-    </div>
+    <p class="subscribe">Subscribe below</p>
+    <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+      <div class="form-group mail-field">
+        <input type="email" class="form-control email"
+          placeholder="your@email.com" formControlName="email" required
+        >
+        <button type="submit" class="fa fa-send" aria-hidden="true"></button>
+        <div class="form-control-feedback"
+          *ngIf="myform.controls.email.errors && (myform.controls.email.dirty || myform.controls.email.touched)">
+          <p *ngIf="myform.controls.email.errors.required">
+            <small>Email is required</small>
+          </p>
+          <p *ngIf="myform.controls.email.errors.pattern">
+            <small>The email address must contain at least the @ character</small>
+          </p>
+        </div>
+      </div>  
+    </form>    
   </div>
-  <div class="follow-us">
+  <div class="part">
     <p class="news">Follow us</p>
-    <p>Social media</p>
-    <div class="icons">
-      <div *ngFor="let item of iconItems" >
-        <img src={{item}} class="icon">
-      </div>
+    <p class="social">Social media</p>
+    <div class="icons-div">
+      <a href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="https://www.plus.google.com"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
     </div>
   </div>
 </div>
+
+<!-- 
+[ngClass]="{
+  'has-error': !emailForm.get('email').valid && emailForm.get('email').touched,
+  'has-feedback': !emailForm.get('email').valid && emailForm.get('email').touched
+}" -->
