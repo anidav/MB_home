@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, Validators, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Directive } from '@angular/core';
+import { ElementRef, Renderer } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -8,20 +10,20 @@ import { FormGroup, FormBuilder, Validators, FormControl, ReactiveFormsModule } 
 })
 
 export class FooterComponent implements OnInit {
-  emailForm: FormGroup;
-  email: FormControl;
+  myform: FormGroup;
 
   onSubmit() {
-    if (this.emailForm.valid) {
-      console.log('valid email');
+    if (this.myform.valid) {
+      console.log('valid email');      
     }
   }
-  
-  constructor(private formBuilder: FormBuilder) { }
+  constructor() {
 
+  }
+      
   ngOnInit() {
-    this.emailForm = this.formBuilder.group({
-      email: [null, [Validators.required, Validators.email]],
+    this.myform = new FormGroup({
+      email: new FormControl (null, [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")])
     });
   }
 }

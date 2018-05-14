@@ -17,13 +17,21 @@
   <div class="part">
     <p class="news">Newsletter</p>
     <p class="subscribe">Subscribe below</p>
-    <form [formGroup]="emailForm">
+    <form [formGroup]="myform" (ngSubmit)="onSubmit()">
       <div class="form-group mail-field">
-        <input required type="text" id="email" class="form-control email"
-          placeholder="your@email.com" formControlName="email"
+        <input type="email" class="form-control email"
+          placeholder="your@email.com" formControlName="email" required
         >
-        <button type="submit" class="fa fa-send" aria-hidden="true"
-          [disabled]="!emailForm.valid" (click)="onSubmit()"></button>
+        <button type="submit" class="fa fa-send" aria-hidden="true"></button>
+        <div class="form-control-feedback"
+          *ngIf="myform.controls.email.errors && (myform.controls.email.dirty || myform.controls.email.touched)">
+          <p *ngIf="myform.controls.email.errors.required">
+            <small>Email is required</small>
+          </p>
+          <p *ngIf="myform.controls.email.errors.pattern">
+            <small>The email address must contain at least the @ character</small>
+          </p>
+        </div>
       </div>  
     </form>    
   </div>
@@ -38,3 +46,9 @@
     </div>
   </div>
 </div>
+
+<!-- 
+[ngClass]="{
+  'has-error': !emailForm.get('email').valid && emailForm.get('email').touched,
+  'has-feedback': !emailForm.get('email').valid && emailForm.get('email').touched
+}" -->
