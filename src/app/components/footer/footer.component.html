@@ -17,19 +17,25 @@
   <div class="part">
     <p class="news">Newsletter</p>
     <p class="subscribe">Subscribe below</p>
-    <form [formGroup]="myform" (ngSubmit)="onSubmit()">
-      <div class="form-group mail-field">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group mail-field" [ngClass]="{
+        'has-danger': email.invalid && (email.dirty || emailtouched), 
+        'has-success': email.valid && (email.dirty || email.touched)}"
+      >
         <input type="email" class="form-control email"
-          placeholder="your@email.com" formControlName="email" required
+          placeholder="your@email.com" name="email" 
+          [(ngModel)]="emailAddress" #email="ngModel" required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         >
         <button type="submit" class="fa fa-send" aria-hidden="true"></button>
         <div class="form-control-feedback"
-          *ngIf="myform.controls.email.errors && (myform.controls.email.dirty || myform.controls.email.touched)">
-          <p *ngIf="myform.controls.email.errors.required">
+          *ngIf="email.errors && (email.dirty || email.touched)"
+        >
+          <p *ngIf="email.errors.required">
             <small>Email is required</small>
           </p>
-          <p *ngIf="myform.controls.email.errors.pattern">
-            <small>The email address must contain at least the @ character</small>
+          <p *ngIf="email.errors.pattern">
+            <small>Email must contain the @ character</small>
           </p>
         </div>
       </div>  
