@@ -9,7 +9,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule }   from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent,

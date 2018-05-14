@@ -9,6 +9,7 @@ import { ViewChild } from '@angular/core';
 
 export class FooterComponent implements OnInit {
   emailAddress: string;
+  
   @ViewChild('f') form: any;
 
   onSubmit() {
