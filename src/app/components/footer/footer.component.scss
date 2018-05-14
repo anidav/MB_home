@@ -42,10 +42,18 @@
     }
     .icons-div {
         display: flex;
-        .icon {
-            @include imagesize(30px, 30px);
+        i.fa.fa-facebook, i.fa.fa-twitter, i.fa.fa-linkedin, i.fa.fa-google-plus {
+            border-radius: 100%;
+            font-size: $small;
+            height: $large/2;
             margin: 5px;
+            text-align: center;
+            padding-top: 4px;
+            width: $large/2;
+            border: 1px solid $footer-color;
+            color: $footer-color;
+            background-color: $white;
             cursor: pointer;
         }
-    }
+    }                
 }

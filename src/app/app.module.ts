@@ -6,6 +6,7 @@ import { LogosComponent } from './components/logos/logos.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
