@@ -17,12 +17,16 @@
   <div class="part">
     <p class="news">Newsletter</p>
     <p class="subscribe">Subscribe below</p>
-    <form>
-      <div class="form-group">
-        <input type="email" class="form-control email" placeholder="your@email.com">
+    <form [formGroup]="emailForm">
+      <div class="form-group mail-field">
+        <input required type="text" id="email" class="form-control email"
+          placeholder="your@email.com" formControlName="email"
+        >
+        <button type="submit" class="fa fa-send" aria-hidden="true"
+          [disabled]="!emailForm.valid" (click)="onSubmit()"></button>
       </div>  
     </form>    
-  </div> 
+  </div>
   <div class="part">
     <p class="news">Follow us</p>
     <p class="social">Social media</p>

@@ -7,6 +7,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   ],
   imports: [
     BrowserModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

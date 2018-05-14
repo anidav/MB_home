@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -7,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class FooterComponent implements OnInit {
+  emailForm: FormGroup;
+  email: FormControl;
 
-  constructor() { }
+  onSubmit() {
+    if (this.emailForm.valid) {
+      console.log('valid email');
+    }
+  }
+  
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    
+    this.emailForm = this.formBuilder.group({
+      email: [null, [Validators.required, Validators.email]],
+    });
   }
 }
